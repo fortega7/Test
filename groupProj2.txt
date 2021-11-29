@@ -1,0 +1,117 @@
+package CurrencyConverter;
+
+import java.util.*;
+import java.text.DecimalFormat;
+
+public class currencyTwo {
+
+	public static void main(String[] args) {
+
+		double amount;
+		
+		double peso;
+		double canadaDollar, euro, won;
+
+		int inputNum;
+
+		DecimalFormat d = new DecimalFormat("##.##");
+
+		
+		do { 
+			menu();
+			Scanner scan = new Scanner(System.in);
+		System.out.println("1:Canadian Dollar\t2:Peso\t3:Euro\t4:Won\t5.Exit ");
+		inputNum = scan.nextInt();
+	
+			switch (inputNum) {
+			case 1:
+				Scanner scan3 = new Scanner(System.in);
+				System.out.println("How much would you like to exchange? ");
+				amount = scan3.nextDouble();
+				canadaDollar = 1.27;
+				convertToCanadian(amount, canadaDollar); {
+				break;
+			}
+				
+			case 2:
+				Scanner scan2 = new Scanner(System.in);
+				System.out.println("How much would you like to exchange? ");
+				amount = scan2.nextDouble();
+				peso = 21;
+				convertToPeso(amount, peso); {
+				break;
+			}
+			case 3:
+				Scanner scan4 = new Scanner(System.in);
+				System.out.println("How much would you like to exchange? ");
+				amount = scan4.nextDouble();
+				euro = .89;
+				convertToEuro(amount, euro); {
+				break;
+			}
+
+			case 4:
+				Scanner scan5 = new Scanner(System.in);
+				System.out.println("How much would you like to exchange? ");
+				amount = scan5.nextDouble();
+				won = 1188.89;
+				convertToWon(amount, won); {
+				break;
+			}
+			case 5:
+			// Do stuff when no case is matched
+			
+			break;
+			}
+		} while(inputNum != 5);
+		
+	}
+	
+	public static void menu() {
+		System.out.println("----------------------------------------------------------");
+
+		System.out.println("********** Hi, how much money you got? **********");
+
+		System.out.println("Wanna know how much its worth in another currency? Select a currency!");
+
+
+	}
+
+	public static Double convertToPeso(double amount, double peso) {
+		// double pesos;
+
+		double pesos = peso * amount;
+
+		System.out.println("Your $" + amount + " dollars is: " + pesos + " Pesos!");
+
+		return pesos;
+	
+
+	}
+
+	public static Double convertToCanadian(double amount, double canadaDollar) {
+		double can = canadaDollar * amount;
+
+		System.out.println("Your $" + amount + " dollars is: " + can + " Canadian eh!");
+
+		return can;
+		
+	}
+
+	public static Double convertToEuro(double amount, double euro) {
+		double euros = euro * amount;
+
+		System.out.println("Your $" + amount + " dollars is: " + euros + " Euros!");
+
+		return euros;
+	}
+	public static Double convertToWon(double amount, double won) {
+		double wons = won * amount;
+
+		System.out.println("Your $" + amount + " dollars is: " + wons + " Won!");
+
+		return wons;
+	}
+	
+
+}
