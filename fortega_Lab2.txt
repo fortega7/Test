@@ -1,0 +1,122 @@
+package Lab2;
+import java.util.*;
+
+public class Lab2 {
+
+	public static void main(String[] args) {
+		
+		circle(); 
+		triangle(); 
+		evenOdd(); 
+		decimal(); 
+		ascii();	 
+		whole();
+		leapYear();
+
+	}
+	// 1. Write a method to prompt the user to enter the radius of the circle then
+	// calculate the area and circumference of the circle
+
+	public static void circle() {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter a radius to find the area of a circle: ");
+		double radius = scan.nextDouble();
+		double areaOfCircle = radius * radius * 3.14159;
+		System.out.println("The area of the circle is " + areaOfCircle);
+		System.out.println("------------------------------------------------------");
+	}
+
+	// 2. Write a method to prompt the user for base-width and height of a triangle, 
+	// then calculate the area of the Triangle.
+	public static void triangle() {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter a base-width for trianglea triangle: ");
+		double baseWidth = scan.nextDouble();
+		System.out.println("Enter a height for the triangle: ");
+		double height = scan.nextDouble();
+		double areaOfTriangle = (height * baseWidth) / 2;
+
+		System.out.println("The area of the triangle is " + areaOfTriangle);
+		System.out.println("------------------------------------------------------");
+
+	}
+	// 3. Write a method to prompt the user for a number then display check if the number 
+	// is Even or Odd.
+	public static void evenOdd() {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter a whole number to see if it is even or odd: ");
+		int oddOrEven = scan.nextInt();
+		if (oddOrEven % 2 == 0) {
+			System.out.println("Your number is even!");
+			System.out.println("------------------------------------------------------");
+
+		} else
+			System.out.println("Your number is odd!");
+		System.out.println("------------------------------------------------------");
+
+	}
+	// 4. Write a method to prompt the user for an Integer then display the same value with 
+	// one decimal place.
+	public static void decimal() {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter an integer to convert to double: ");
+		int integer = scan.nextInt();
+		double d = integer;
+		
+		System.out.printf("You entered " + integer + ", the new value is %.1f\n", d);
+		System.out.println("------------------------------------------------------");
+
+	}
+	// 5. Write a method to prompt the user for a letter of the alphabet and display 
+	// it's ascii value.
+	
+	  public static void ascii() { Scanner scan = new Scanner(System.in);
+	  System.out.println("Enter a letter to get it's ascii value: "); 
+	  char ascii = scan.next().charAt(0);; 
+	  int asc = ascii;
+	  
+	  System.out.println("Your ascii value is: " + (int)asc);
+	  System.out.println("------------------------------------------------------");
+
+	  }
+	
+	// 6. Write a method to prompt the user for a double then display the value as a whole 
+	// number.
+	  
+	  public static void whole() { Scanner scan = new Scanner(System.in);
+	  System.out.println("Enter a double value to get the whole number: "); 
+	  double wholeNum = scan.nextDouble(); 
+	  
+	  System.out.println("Your whole number value is: " + (int)wholeNum);
+	  System.out.println("------------------------------------------------------");
+
+	  }
+	
+	// 7. Write a method to prompt the user for 4 digits representing a year. Then determine 
+	// If Year Is a Leap Year.
+	  
+	  public static void leapYear() { Scanner scan = new Scanner(System.in);
+	  System.out.println("Enter a year to see if it is a leap year: "); 
+	  int year = scan.nextInt(); 
+	  boolean leap;
+	  if(year % 4 == 0 ) {
+		  if(year % 100 == 0 ) { 
+			  if( year % 400 == 0) 
+				  leap = true;
+			   else 
+				  leap = false;
+		  }
+		  else
+			  leap = true;
+		  System.out.println(year + " is a leap year!"); 
+
+	  }else
+		  System.out.println(year + " is not a leap year!"); 
+
+		  leap = false;
+	  
+
+	  System.out.println("------------------------------------------------------");
+
+	  }  
+}
